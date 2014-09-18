@@ -17,6 +17,10 @@
 ;; tramp and zsh
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
+;; Swap Meta and Super (Alt and Command)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+
 ;; Enable clipboard
 (setq x-select-enable-clipboard t)
 

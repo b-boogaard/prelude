@@ -37,8 +37,7 @@
   (progn
     (setq key-chord-two-keys-delay 0.2)
     (key-chord-define-global "jj" nil)
-    (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
-    (key-chord-mode 1)))
+    (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)))
 
 (use-package org
   :defer t
@@ -112,7 +111,6 @@
       (setq ac-sources-semantic)))))
 
 (use-package prelude-flyspell
-  :disabled t
   :init
   (setq prelude-flyspell nil))
 
