@@ -11,9 +11,8 @@
   :diminish auto-complete-mode
   :init
   (progn
-    (push 'jde-mode ac-modes)
-    (add-to-list 'ac-modes 'jde-mode)
     (add-to-list 'ac-modes 'org-mode)
+    (add-to-list 'ac-modes 'js2-mode)
     (global-auto-complete-mode 1)))
 
 (use-package evil
@@ -24,20 +23,20 @@
     (define-key evil-normal-state-map (kbd ";") 'evil-ex)
     (evil-mode 1)))
 
-(use-package powerline-evil
-  :init
-  (progn
-    (powerline-evil-center-color-theme)
-    (setq display-time-day-and-date t
-          display-time-24hr-format t)
-    (display-time)))
-
 (use-package key-chord
   :init
   (progn
     (setq key-chord-two-keys-delay 0.2)
     (key-chord-define-global "jj" nil)
+    (key-chord-define-global "jk" nil)
+    (key-chord-define-global "jl" nil)
+    (key-chord-define-global "uu" nil)
     (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)))
+
+(use-package js2-mode
+  :mode ("\\.js\\'" . js2-mode)
+  :config
+  (ac-js2-mode))
 
 (use-package org
   :defer t
@@ -99,17 +98,6 @@
   ;; Replace "sbcl" with the path to your implementation
   (setq inferior-lisp-program "/usr/local/Cellar/sbcl/1.2.0/bin/sbcl"))
 
-(use-package jde
-  :defer t
-  :load-path "~/.emacs.d/jdee-2.4.1/lisp"
-  :config
-  (progn
-    (load "jde")
-    (add-hook 'jde-mode-hook '(lambda ()
-      (add-to-list 'ac-omni-completion-sources
-      (cons "\\." '(ac-source-semantic)))
-      (setq ac-sources-semantic)))))
-
 (use-package prelude-flyspell
   :init
   (setq prelude-flyspell nil))
@@ -129,18 +117,6 @@
   (setq multi-term-program "/usr/local/bin/zsh"))
 
 (use-package org-jira
-  :defer t)
-
-(use-package term+
-  :defer t)
-
-(use-package term+mux
-  :defer t)
-
-(use-package term-alert
-  :defer t)
-
-(use-package term-cmd
   :defer t)
 
 (provide 'packages)

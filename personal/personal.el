@@ -24,5 +24,7 @@
 ;; Enable clipboard
 (setq x-select-enable-clipboard t)
 
+;; emacs shells to not display ascii color codes
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 (provide 'personal)
 ;;; personal.el ends here
