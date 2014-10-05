@@ -13,13 +13,20 @@
 ;; Bells are evil
 (setq visible-bell t)
 
+;; Spell checking on the fly is evil
+(setq prelude-flyspell nil)
+
 ;; Use bash while in TRAMP - prevent issues between
 ;; tramp and zsh
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
+;; Get a real gutter
+(set-window-margins nil 1)
+
 ;; Swap Meta and Super (Alt and Command)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
+
 
 ;; Enable clipboard
 (setq x-select-enable-clipboard t)

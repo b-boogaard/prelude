@@ -98,26 +98,13 @@
   ;; Replace "sbcl" with the path to your implementation
   (setq inferior-lisp-program "/usr/local/Cellar/sbcl/1.2.0/bin/sbcl"))
 
-(use-package prelude-flyspell
-  :init
-  (setq prelude-flyspell nil))
-
-(use-package evil-indent-text
-  :defer t)
-
 (use-package evil-nerd-commenter
-  :defer t)
-
-(use-package evil-visualstart
   :defer t)
 
 (use-package multi-term
   :defer t
   :config
   (setq multi-term-program "/usr/local/bin/zsh"))
-
-(use-package org-jira
-  :defer t)
 
 (provide 'packages)
 ;;; packages.el ends here
