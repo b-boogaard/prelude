@@ -11,6 +11,7 @@
   :diminish auto-complete-mode
   :init
   (progn
+    (setq ac-sources (append `(ac-source-semantic) ac-sources))
     (add-to-list 'ac-modes 'org-mode)
     (add-to-list 'ac-modes 'js2-mode)
     (global-auto-complete-mode 1)))
@@ -85,7 +86,8 @@
   :init
   (progn
     (setq semantic-default-submodes
-          '(global-semantic-idle-scheduler-mode
+          '(semantic-load-enable-excessive-code-helpers
+            global-semantic-idle-scheduler-mode
             global-semanticdb-minor-mode
             global-semantic-idle-summary-mode
             global-semantic-mru-bookmark-mode))
