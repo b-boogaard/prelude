@@ -27,6 +27,8 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 
+;; Stop with the auto-escaped quotes
+(setq sp-autoescape-string-quote nil)
 
 ;; Enable clipboard
 (setq x-select-enable-clipboard t)
